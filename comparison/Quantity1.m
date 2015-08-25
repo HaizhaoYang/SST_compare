@@ -192,11 +192,11 @@ if 1
     hold off;
     xlabel('\sigma^2');ylabel('EMD');
     
-    set(gca, 'FontSize', 18);
-    b=get(gca);
-    set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
-    str = 'results/compRS';
-    print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
+%     set(gca, 'FontSize', 18);
+%     b=get(gca);
+%     set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
+%     str = 'results/compRS';
+%     print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
 end
 
 if 1
@@ -218,10 +218,10 @@ if 1
     hold off;
     xlabel('\sigma^2');ylabel('OT');
     
-    set(gca, 'FontSize', 18);
-    b=get(gca);
-    set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
-    str = 'results/compOTorg';
-    print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
+%     set(gca, 'FontSize', 18);
+%     b=get(gca);
+%     set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
+%     str = 'results/compOTorg';
+%     print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
 end
 

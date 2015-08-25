@@ -26,9 +26,9 @@ for cnt = 1:sn
 end
 figure;imagesc([0,1],[0,130],temp);axis square;         axis xy;
 xlabel('Time') ; ylabel('Freq') ; %title('SST (display in linear scale)') ;
-set(gca, 'FontSize', 18);
-b=get(gca);
-set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
-str = 'results/nsReal';
-print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
+% set(gca, 'FontSize', 18);
+% b=get(gca);
+% set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
+% str = 'results/nsReal';
+% print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
 

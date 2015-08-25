@@ -47,11 +47,11 @@ for opt = 1:2 % loop on means
         imagesc([0,1],[0,130],RSS(1:Nfft/8,:,opt,k));axis square; axis xy;
         xlabel('Time')
         ylabel('Freq')
-        set(gca, 'FontSize', 18);
-        b=get(gca);
-        set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
-        str = ['results/nsRS' num2str(opt)];
-        print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
+%         set(gca, 'FontSize', 18);
+%         b=get(gca);
+%         set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
+%         str = ['results/nsRS' num2str(opt)];
+%         print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
     end
 end
 

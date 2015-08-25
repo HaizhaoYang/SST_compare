@@ -86,9 +86,9 @@ if 1
     hold off;
     xlabel('Reduncancy');ylabel('EMD');
     
-    set(gca, 'FontSize', 18);
-    b=get(gca);
-    set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
-    str = 'results/compRed';
-    print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
+%     set(gca, 'FontSize', 18);
+%     b=get(gca);
+%     set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
+%     str = 'results/compRed';
+%     print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
 end

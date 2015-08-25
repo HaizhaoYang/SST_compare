@@ -21,9 +21,9 @@ time = [1/Hz:1/Hz:L]' ;
 figure;
 imageSQ(time, tfrsqtic*Hz, abs(tfrsq)) ; axis square; 
 xlabel('Time') ; ylabel('Freq') ;
-set(gca, 'FontSize', 18);
-b=get(gca);
-set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
-str = 'results/nsSTFT';
-print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
+% set(gca, 'FontSize', 18);
+% b=get(gca);
+% set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
+% str = 'results/nsSTFT';
+% print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
 

@@ -33,11 +33,11 @@ pic = figure;imagesc([0 1],[0 highglobal],real(T_f((end-1)/2:end,:)));
 axis square; axis xy;
 T_ftemp = T_f;
 xlabel('Time')
-ylabel('Freq')
-set(gca, 'FontSize', 18);
-b=get(gca);
-set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
-str = 'results/nsWPT';
-print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
+% ylabel('Freq')
+% set(gca, 'FontSize', 18);
+% b=get(gca);
+% set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
+% str = 'results/nsWPT';
+% print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
 
 
