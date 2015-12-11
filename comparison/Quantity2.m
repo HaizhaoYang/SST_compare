@@ -1,9 +1,9 @@
-% This code draws the synchrosqueezed wavelet transform in Figure 9 (left) of
+% This code draws the synchrosqueezed transforms in Figure 9 (top-left) of
 % H. Yang, Robustness Analysis of Synchrosqueezed Transforms, preprint,
 % 2014.
 
 clear all;
-numTest = 10;
+numTest = 20;
 
 redNum = [1 5:5:50];
 recMat = [];
@@ -60,14 +60,14 @@ for SNR = 40:-10:10
         end
     end
     recMat = [recMat; recVec];
-    save 'results/rec2.mat' recMat;
+    %save 'results/recQuantity2.mat' recMat;
 end
 
 if 1
-    %load 'results/rec2.mat';
+    %load 'results/recQuantity2.mat';
     [nplot sn] = size(recMat);
     
-    figure;
+    pic = figure;
     hold on;
     h = zeros(1, nplot);
     x = [1 5:5:50];
@@ -85,10 +85,12 @@ if 1
     axis square;
     hold off;
     xlabel('Reduncancy');ylabel('EMD');
-    
+%     
 %     set(gca, 'FontSize', 18);
 %     b=get(gca);
 %     set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
-%     str = 'results/compRed';
+%     str = sprintf('results/compRed%d',numTest);
 %     print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
+%     head = sprintf('results/compRed%d.fig',numTest);
+    %saveas(pic,head);
 end

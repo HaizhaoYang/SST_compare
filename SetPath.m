@@ -51,6 +51,13 @@ tempPath = [tempPath front 'tftb' back 'tests' back];
 
 tempPath = [tempPath front 'tftb' back 'multiTaper' back];
 
+% ConceFT code
+tempPath = [tempPath front 'conceFT' back];
+
+tempPath = [tempPath front 'conceFT' back 'Conceft' back];
+
+tempPath = [tempPath front 'conceFT' back 'Conceft' back 'Morse' back];
+
 % EMD
 tempPath = [tempPath front 'FastEMD' back];
 

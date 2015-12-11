@@ -1,14 +1,16 @@
-% This code draws the synchrosqueezed wavelet transform in Figure 9 (middle
-% and right) of
+% This code draws the synchrosqueezed transforms in Figure 9 (bottom) of
 % H. Yang, Robustness Analysis of Synchrosqueezed Transforms, preprint,
 % 2014.
 
 clear all;
 close all;
-numTest = 10;
+numTest = 20;
 
 recMat = [];
-for NM = 0:0.2:4
+NMvec = 0:0.2:4;
+length(NMvec)
+for cntNM = 1:length(NMvec)
+    NM = NMvec(cntNM)
     recVec = zeros(1,7);
     for cntt = 1:numTest
         %% set up data
@@ -162,12 +164,14 @@ for NM = 0:0.2:4
         recVec = recVec + [EMDrec1 EMDrec2 EMDrec3 EMDrec4 EMDrec5 EMDrec6 EMDrec7]/numTest;
     end
     recMat = [recMat; recVec];
-    save 'results/rec.mat' recMat;
+    head = sprintf('results/rec_NTest_%d.mat',numTest);
+    save(head,'recMat');
 end
 
 %%
 if 1
-    %load 'results/rec.mat';
+    %head = sprintf('results/rec_NTest_%d.mat',numTest);
+    %load(head);
     [sm nplot] = size(recMat);
     
     figure;
@@ -195,11 +199,9 @@ if 1
 %     set(gca, 'FontSize', 18);
 %     b=get(gca);
 %     set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
-%     str = 'results/compRS';
+%     str = sprintf('results/compRS%d',numTest);
 %     print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
-end
 
-if 1
     figure;
     hold on;
     h = zeros(1, 3);
@@ -216,12 +218,14 @@ if 1
     legend(h,'HSST','SSWT','SSSTFT','Location','southeast');
     axis square;
     hold off;
-    xlabel('\sigma^2');ylabel('OT');
+    xlabel('\sigma^2');ylabel('EMD');
     
 %     set(gca, 'FontSize', 18);
 %     b=get(gca);
 %     set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
-%     str = 'results/compOTorg';
+%     str = sprintf('results/compOTorg%d',numTest);
 %     print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
 end
 
+% head = sprintf('rslt%d.mat',numTest);
+% save(head);
