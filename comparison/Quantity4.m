@@ -137,7 +137,7 @@ if 1
     
     pic = figure;
     hold on;
-    h = zeros(1, 5);
+    h = zeros(1, 3);
     x = 0:0.2:4;
     x = x(:);
     y = recMat(:,1);
@@ -146,9 +146,9 @@ if 1
     h(2) = plot(x,y,'-^b');
     y = recMat(:,3);
     h(3) = plot(x,y,'-om');
+    hold off;
     
-    
-    legend(h,'SSWPT10','ConceFT_CWT','ConceFT_STFT','Location','southeast');
+    legend(h,'SSWPT10','ConceFT-CWT','ConceFT-STFT','Location','southeast');
     axis square;
     hold off;
     xlabel('\sigma^2');ylabel('EMD');
