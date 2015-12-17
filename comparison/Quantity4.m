@@ -6,9 +6,15 @@
 clear all;
 close all;
 numTest = 20;
+NMvec = 0:0.2:1;
 
+% This code is very slow. You can plot the results precomputed or run this
+% code to compute the results again.
+
+isCompute = 0; % whether compute the results again, 0: yes, 1: no
+
+if isCompute
 recMat = [];
-NMvec = 0:0.2:4;
 length(NMvec)
 for cntNM = 1:length(NMvec)
     NM = NMvec(cntNM)
@@ -125,20 +131,22 @@ for cntNM = 1:length(NMvec)
         recVec = recVec + [EMDrec1 EMDrec2 EMDrec3]/numTest;
     end
     recMat = [recMat; recVec];
-    %     head = sprintf('results/recQuantity4_NTest_%d.mat',numTest);
-    %     save(head,'recMat');
+    head = sprintf('results/recQuan4_NTest_%d.mat',numTest);
+    save(head,'recMat');
+end
+else
+    head = sprintf('results/recQuan4_NTest_%d.mat',numTest);
+    load(head);
 end
 
 %%
 if 1
-    %     head = sprintf('results/recQuantity4_NTest_%d.mat',numTest);
-    %load(head);
     [sm nplot] = size(recMat);
     
     pic = figure;
     hold on;
     h = zeros(1, 3);
-    x = 0:0.2:4;
+    x = NMvec;
     x = x(:);
     y = recMat(:,1);
     h(1) = plot(x,y,'-*k');
@@ -159,6 +167,3 @@ if 1
     %     str = sprintf('results/compRS%d',numTest);
     %     print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
 end
-
-% head = sprintf('rslt%d.mat',numTest);
-% save(head);

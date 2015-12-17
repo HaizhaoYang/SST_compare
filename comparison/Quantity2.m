@@ -60,11 +60,13 @@ for SNR = 40:-10:10
         end
     end
     recMat = [recMat; recVec];
-    %save 'results/recQuantity2.mat' recMat;
+    head = sprintf('results/recQuan2_NTest_%d.mat',numTest);
+    save(head,'recMat');
 end
 
 if 1
-    %load 'results/recQuantity2.mat';
+    %head = sprintf('results/recQuan2_NTest_%d.mat',numTest);
+    %load(head);
     [nplot sn] = size(recMat);
     
     pic = figure;

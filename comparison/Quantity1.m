@@ -164,13 +164,13 @@ for cntNM = 1:length(NMvec)
         recVec = recVec + [EMDrec1 EMDrec2 EMDrec3 EMDrec4 EMDrec5 EMDrec6 EMDrec7]/numTest;
     end
     recMat = [recMat; recVec];
-    head = sprintf('results/rec_NTest_%d.mat',numTest);
+    head = sprintf('results/recQuan1_NTest_%d.mat',numTest);
     save(head,'recMat');
 end
 
 %%
 if 1
-    %head = sprintf('results/rec_NTest_%d.mat',numTest);
+    %head = sprintf('results/recQuan1_NTest_%d.mat',numTest);
     %load(head);
     [sm nplot] = size(recMat);
     

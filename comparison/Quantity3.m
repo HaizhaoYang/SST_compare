@@ -69,8 +69,8 @@ for cntNM = 1:length(NMvec)
         recVec = recVec + recEMD/numTest;
     end
     recMat = [recMat; recVec];
-%     head = sprintf('results/recQuan3_NTest_%d.mat',numTest);
-%     save(head,'recMat');
+    head = sprintf('results/recQuan3_NTest_%d.mat',numTest);
+    save(head,'recMat');
 end
 %%
 if 1
@@ -100,11 +100,11 @@ if 1
     hold off;
     xlabel('\sigma^2');ylabel('EMD');
     
-%     set(gca, 'FontSize', 18);
-%     b=get(gca);
-%     set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
-%     str = sprintf('results/compt_sc%d',numTest);
-%     print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
-%     head = sprintf('results/compt_sc%d.fig',numTest);
-%     saveas(pic,head);
+    %     set(gca, 'FontSize', 18);
+    %     b=get(gca);
+    %     set(b.XLabel, 'FontSize', 18);set(b.YLabel, 'FontSize', 18);set(b.ZLabel, 'FontSize', 18);set(b.Title, 'FontSize', 18);
+    %     str = sprintf('results/compt_sc%d',numTest);
+    %     print(gcf, '-depsc2', str);      command = sprintf('epstopdf %s.eps',str);      system(command);
+    %     head = sprintf('results/compt_sc%d.fig',numTest);
+    %     saveas(pic,head);
 end
